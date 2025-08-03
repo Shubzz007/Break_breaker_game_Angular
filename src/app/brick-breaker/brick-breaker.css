@@ -1,0 +1,105 @@
+.game-container {
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 1.2rem 0.35rem 0 0.35rem;
+    background: linear-gradient(135deg, #18181b 0%, #27272a 100%);
+    min-height: 100vh;
+    text-align: center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.heart {
+    font-size: 1.7rem;
+    margin: 0 0.03em 0 0;
+    vertical-align: middle;
+    color: #ef4444;
+    transition: opacity 0.2s;
+}
+
+button {
+    padding: 0.4rem 1.2rem;
+    margin: 0.35rem 0.32rem;
+    border-radius: 0.36rem;
+    font-size: 1.1rem;
+    background: #3b82f6;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.13s;
+}
+
+button:hover {
+    background: #2563eb;
+}
+
+.canvas-wrapper {
+    width: 100%;
+    max-width: 480px;
+    margin: 1.5rem auto 1rem auto;
+    display: flex;
+    justify-content: center;
+}
+
+canvas {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3;
+    background: #1a1a1a;
+    border-radius: 1rem;
+    box-shadow: 0 0 16px #222, 0 2px 8px #0006;
+    outline: none;
+}
+
+span {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #22c55e;
+    margin : 10px;
+}
+
+h2 {
+    color: #3b82f6;
+    margin-bottom: 1rem;
+    font-size: 2.1rem;
+    letter-spacing: 0.7px;
+}
+
+.game-tip,
+.game-over,
+.win {
+    color: #fff;
+    font-size: 1.12rem;
+    margin-top: 1.4rem;
+}
+
+.win {
+    color: #22c55e;
+    font-weight: bold;
+}
+
+.game-over {
+    color: #ef4444;
+    font-weight: bold;
+}
+
+@media (max-width: 700px) {
+    .game-container {
+        padding: 0.5rem 0.13rem;
+    }
+
+    h2 {
+        font-size: 1.05rem;
+    }
+
+    .canvas-wrapper {
+        max-width: 99vw;
+    }
+
+    button {
+        font-size: .94rem;
+    }
+
+    canvas {
+        height: 50vw;
+    }
+}

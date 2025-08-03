@@ -1,0 +1,37 @@
+<div class="game-container">
+  <h2>Brick Breaker</h2>
+  <div style="margin:0.5rem 0;">
+    <span>Score: {{score}}</span>
+    <span>High Score: {{highScore}}</span>
+    <span>
+      Lives:
+      <ng-container *ngFor="let x of [1,2,3]; let i = index">
+        <span [style.opacity]="i < lives ? 1 : 0.25" class="heart">❤️</span>
+      </ng-container>
+    </span>
+  </div>
+  <div>
+    <button (click)="handlePlayPause()">
+      <ng-container *ngIf="gameState === 'start' || gameState === 'gameOver' || gameState === 'win'">Start</ng-container>
+      <ng-container *ngIf="gameState === 'playing'">Pause</ng-container>
+      <ng-container *ngIf="gameState === 'paused'">Resume</ng-container>
+    </button>
+    <button (click)="resetGame()">Reset</button>
+  </div>
+  <div class="canvas-wrapper">
+    <canvas #gameCanvas width="800" height="600"></canvas>
+  </div>
+  <div *ngIf="gameState === 'start'" class="game-tip">
+    <p>Mouse/Touch or ← → to move paddle</p>
+    <p>Press SPACE/start to begin, pause, or resume</p>
+    <p>Break all bricks to win!</p>
+  </div>
+  <div *ngIf="gameState === 'gameOver'" class="game-over">
+    <p>Game Over!</p>
+    <p>Final Score: {{score}}</p>
+  </div>
+  <div *ngIf="gameState === 'win'" class="win">
+    <p>You Won! 🎉</p>
+    <p>Final Score: {{score}}</p>
+  </div>
+</div>
